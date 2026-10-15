@@ -1,0 +1,6 @@
+{
+  "name": "CoCreAct — Platform Kolaborasi Kreatif & Dampak Sosial",
+  "description": "CoCreAct menghubungkan individu, komunitas, pendidikan, bisnis, dan pemerintah untuk mengubah ide menjadi aksi kolaboratif berdampak positif. Bukan Siapa, Tetapi Apa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
