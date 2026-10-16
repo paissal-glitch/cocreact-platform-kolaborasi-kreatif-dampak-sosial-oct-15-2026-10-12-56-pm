@@ -119,7 +119,7 @@ export const HERO_CONTENT = {
     id: 'Gulir ke bawah',
     en: 'Scroll down',
   },
-  fallbackImage: '/src/assets/images/hero_collaboration_documentary_1792061992349.jpg',
+  fallbackImage: '/assets/images/hero_collaboration_documentary_1792061992349.jpg',
   fallbackImageAlt: {
     id: 'Dokumentasi perancangan inisiatif kolaboratif CoCreAct',
     en: 'CoCreAct collaborative initiative design documentation',
@@ -252,7 +252,7 @@ export const VERIFIED_PROJECTS: ProjectItem[] = [
       id: 'Rangkaian kegiatan perdana CoCreAct sebagai ruang pertemuan, kreativitas, dan kolaborasi.',
       en: 'The inaugural series of CoCreAct initiatives providing a dedicated space for gathering, creativity, and collaboration.',
     },
-    image: '/src/assets/images/portfolio_cocreact_vol1_1792062039777.jpg',
+    image: '/assets/images/portfolio_cocreact_vol1_1792062039777.jpg',
     imageAlt: {
       id: 'Pameran zine dan karya fotografi komunitas dalam CoCreAct Vol. 1',
       en: 'Community zine and photography exhibition in CoCreAct Vol. 1',
@@ -326,7 +326,7 @@ export const VERIFIED_PROJECTS: ProjectItem[] = [
       id: 'Kompetisi menggambar dan desain yang membuka ruang ekspresi serta kreativitas bagi peserta.',
       en: 'A drawing and design competition opening expressive spaces and creative exploration for participants.',
     },
-    image: '/src/assets/images/portfolio_drawing_competition_1792062042111.jpg',
+    image: '/assets/images/portfolio_drawing_competition_1792062042111.jpg',
     imageAlt: {
       id: 'Peserta muda menggambar dan mendesain karya bertema menjaga lingkungan bersama',
       en: 'Young participants drawing and designing works on collective environmental care',
@@ -396,7 +396,7 @@ export const VERIFIED_PROJECTS: ProjectItem[] = [
       id: 'Program yang mengangkat budaya kegiatan luar ruang yang aman dan berkelanjutan.',
       en: 'A dedicated initiative cultivating a safe, responsible, and sustainable outdoor recreation culture.',
     },
-    image: '/src/assets/images/portfolio_outdoor_culture_1792062042130.jpg',
+    image: '/assets/images/portfolio_outdoor_culture_1792062042130.jpg',
     imageAlt: {
       id: 'Sesi edukasi etika luar ruang dan keselamatan bersama penggiat alam terbuka',
       en: 'Outdoor ethics and safety education session with wilderness practitioners',
@@ -466,7 +466,7 @@ export const VERIFIED_PROJECTS: ProjectItem[] = [
       id: 'Program edukasi HIV/AIDS dan kesehatan seksual yang inklusif bagi masyarakat umum, teman Tuli, dan penyandang disabilitas.',
       en: 'An inclusive HIV/AIDS and sexual health educational initiative designed for the public, Deaf peers, and people with disabilities.',
     },
-    image: '/src/assets/images/portfolio_inclusive_pesona_1792062042660.jpg',
+    image: '/assets/images/portfolio_inclusive_pesona_1792062042660.jpg',
     imageAlt: {
       id: 'Lokakarya edukasi kesehatan dengan kartu visual dan bahasa isyarat inklusif',
       en: 'Health education workshop utilizing visual cards and sign language interpretation',
@@ -536,7 +536,7 @@ export const VERIFIED_PROJECTS: ProjectItem[] = [
       id: 'Kelas edukasi dan pengembangan keterampilan dalam pembuatan video.',
       en: 'An educational workshop cultivating practical storytelling and technical video creation skills.',
     },
-    image: '/src/assets/images/pillar_creative_learning_1792061992189.jpg',
+    image: '/assets/images/pillar_creative_learning_1792061992189.jpg',
     imageAlt: {
       id: 'Praktik produksi video mobile dan penyuntingan konten kreatif bersama peserta kelas',
       en: 'Mobile video production practice and editing session with workshop participants',
@@ -608,7 +608,7 @@ export const VERIFIED_PROJECTS: ProjectItem[] = [
       id: 'Penguatan kapasitas guru SLB dalam pendidikan HIV/AIDS dan kesehatan reproduksi inklusif, sebagai kelanjutan dari program PESONA.',
       en: 'Capacity-strengthening workshop for special needs (SLB) teachers in inclusive HIV/AIDS and reproductive health education.',
     },
-    image: '/src/assets/images/portfolio_inclusive_pesona_1792062042660.jpg',
+    image: '/assets/images/portfolio_inclusive_pesona_1792062042660.jpg',
     imageAlt: {
       id: 'Sesi peningkatan kapasitas guru SLB dalam pengajaran kesehatan reproduksi adaptif',
       en: 'Capacity-building session for SLB teachers on adaptive health pedagogy',
@@ -678,7 +678,7 @@ export const VERIFIED_PROJECTS: ProjectItem[] = [
       id: 'Inisiatif lingkungan dan sosial yang melibatkan kolaborasi dengan Teman Istimewa dan Gerkatin. Peran CoCreAct mencakup dukungan dokumentasi serta aksesibilitas dan pendampingan bagi peserta Tuli.',
       en: 'An environmental and social initiative collaborating with Teman Istimewa and Gerkatin, where CoCreAct supported documentation, accessibility, and Deaf peer mentorship.',
     },
-    image: '/src/assets/images/pillar_community_impact_1792061992535.jpg',
+    image: '/assets/images/pillar_community_impact_1792061992535.jpg',
     imageAlt: {
       id: 'Kolaborasi penanaman bibit mangrove dan pendampingan di kawasan pesisir',
       en: 'Collaborative mangrove planting and community mentorship along coastal area',
