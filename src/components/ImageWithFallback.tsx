@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ImageOff, Sparkles } from 'lucide-react';
+import { ImageOff } from 'lucide-react';
 
 interface ImageWithFallbackProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -23,22 +23,22 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   if (hasError || !src) {
     return (
       <div
-        className={`w-full ${aspectRatioClass} bg-[#1C201B] border border-[#F4F1E8]/10 rounded-lg flex flex-col items-center justify-center p-6 text-center text-[#A8ADA3] relative overflow-hidden group`}
+        className={`w-full ${aspectRatioClass} bg-[#111411] border border-[#F5F7F0]/10 rounded-lg flex flex-col items-center justify-center p-6 text-center text-[#A5ADA3] relative overflow-hidden group`}
       >
         {/* Subtle patterned background */}
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#166be0_1px,transparent_1px)] [background-size:16px_16px]" />
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#39FF14_1px,transparent_1px)] [background-size:16px_16px]" />
         
-        <div className="w-12 h-12 rounded-full bg-[#111310] border border-[#F4F1E8]/15 flex items-center justify-center text-[#166be0] mb-3 z-10">
+        <div className="w-12 h-12 rounded-full bg-[#102B1B] border border-[#F5F7F0]/15 flex items-center justify-center text-[#39FF14] mb-3 z-10">
           <ImageOff className="w-5 h-5" />
         </div>
         <div className="z-10 max-w-xs">
-          <p className="text-xs font-mono tracking-wider text-[#166be0] uppercase mb-1">
+          <p className="text-xs font-mono tracking-wider text-[#39FF14] uppercase mb-1 font-semibold">
             Visual Asset
           </p>
-          <p className="text-sm font-medium text-[#F4F1E8] line-clamp-2">
+          <p className="text-sm font-medium text-[#F5F7F0] line-clamp-2">
             {fallbackTitle || alt || 'Dokumentasi CoCreAct'}
           </p>
-          <p className="text-[11px] text-[#A8ADA3] mt-1 font-mono">
+          <p className="text-[11px] text-[#A5ADA3] mt-1 font-mono">
             Aset dapat diganti via data konfigurasi
           </p>
         </div>
@@ -47,10 +47,10 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   }
 
   return (
-    <div className={`relative w-full overflow-hidden bg-[#1C201B] ${aspectRatioClass} ${className}`}>
+    <div className={`relative w-full overflow-hidden bg-[#111411] ${aspectRatioClass} ${className}`}>
       {isLoading && (
-        <div className="absolute inset-0 bg-[#1C201B] animate-pulse flex items-center justify-center">
-          <div className="w-6 h-6 border-2 border-[#166be0]/30 border-t-[#166be0] rounded-full animate-spin" />
+        <div className="absolute inset-0 bg-[#111411] animate-pulse flex items-center justify-center">
+          <div className="w-6 h-6 border-2 border-[#39FF14]/30 border-t-[#39FF14] rounded-full animate-spin" />
         </div>
       )}
       <img
@@ -58,11 +58,14 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
         alt={alt}
         referrerPolicy="no-referrer"
         loading="lazy"
-        onLoad={() => setIsLoading(false)}
-        onError={() => setHasError(true)}
-        className={`w-full h-full object-cover transition-opacity duration-300 ${
+        className={`w-full h-full object-cover ${className} transition-opacity duration-300 ${
           isLoading ? 'opacity-0' : 'opacity-100'
         }`}
+        onLoad={() => setIsLoading(false)}
+        onError={() => {
+          setIsLoading(false);
+          setHasError(true);
+        }}
         {...rest}
       />
     </div>

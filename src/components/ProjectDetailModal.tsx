@@ -48,19 +48,19 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
       aria-labelledby="modal-title"
     >
       <div
-        className="relative w-full max-w-4xl max-h-[90vh] bg-[#1C201B] border border-[#F5F4EE]/15 rounded-2xl overflow-y-auto shadow-2xl text-[#F5F4EE]"
+        className="relative w-full max-w-4xl max-h-[90vh] bg-[#111411] border border-[#F5F7F0]/15 rounded-2xl overflow-y-auto shadow-2xl text-[#F5F7F0]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Sticky Close Header */}
-        <div className="sticky top-0 right-0 z-20 flex items-center justify-between px-6 py-4 bg-[#1C201B]/95 backdrop-blur-md border-b border-[#F5F4EE]/10">
-          <div className="flex items-center gap-3 text-xs font-mono text-[#A8ADA3]">
-            <span className="text-[#166be0]">{project.category[lang]}</span>
+        <div className="sticky top-0 right-0 z-20 flex items-center justify-between px-6 py-4 bg-[#111411]/95 backdrop-blur-md border-b border-[#F5F7F0]/10">
+          <div className="flex items-center gap-3 text-xs font-mono text-[#A5ADA3]">
+            <span className="text-[#39FF14]">{project.category[lang]}</span>
             <span>·</span>
             <span>{project.date[lang]}</span>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-[#A8ADA3] hover:text-[#F5F4EE] hover:bg-[#111310] transition-colors cursor-pointer"
+            className="p-1.5 rounded-lg text-[#A5ADA3] hover:text-[#39FF14] hover:bg-[#102B1B] transition-colors cursor-pointer"
             aria-label={lang === 'id' ? 'Tutup detail proyek' : 'Close project details'}
           >
             <X className="w-5 h-5" />
@@ -68,14 +68,14 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
         </div>
 
         {/* Modal Main Banner */}
-        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] overflow-hidden bg-[#111310]">
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] overflow-hidden bg-[#111411]">
           <ImageWithFallback
             src={project.image}
             alt={project.imageAlt[lang]}
             fallbackTitle={project.title}
             aspectRatioClass="aspect-[16/9] sm:aspect-[21/9]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1C201B] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#111411] via-transparent to-transparent" />
         </div>
 
         {/* Modal Content Details */}
@@ -84,47 +84,47 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           <div>
             {project.role && (
               <div className="flex flex-wrap items-center gap-2 mb-3">
-                <span className="text-xs font-mono text-[#166be0] px-2.5 py-0.5 rounded bg-[#166be0]/10 border border-[#166be0]/20">
+                <span className="text-xs font-mono text-[#39FF14] px-2.5 py-0.5 rounded bg-[#39FF14]/10 border border-[#39FF14]/25">
                   {lang === 'id' ? 'Peran Terkonfirmasi: ' : 'Verified Role: '}
                   {project.role[lang]}
                 </span>
                 {project.roleDetail && (
-                  <span className="text-xs font-mono text-[#A8ADA3]">
+                  <span className="text-xs font-mono text-[#A5ADA3]">
                     ({project.roleDetail[lang]})
                   </span>
                 )}
               </div>
             )}
-            <h2 id="modal-title" className="text-2xl sm:text-4xl font-bold font-display text-[#F5F4EE] leading-tight">
+            <h2 id="modal-title" className="text-2xl sm:text-4xl font-bold font-display text-[#F5F7F0] leading-tight">
               {project.title}
             </h2>
-            <p className="text-base text-[#A8ADA3] mt-3 leading-relaxed">
+            <p className="text-base text-[#A5ADA3] mt-3 leading-relaxed">
               {project.summary[lang]}
             </p>
           </div>
 
           {/* Case Study Sections */}
           {caseStudy && (
-            <div className="space-y-8 divide-y divide-[#F5F4EE]/10 text-sm">
+            <div className="space-y-8 divide-y divide-[#F5F7F0]/10 text-sm">
               {/* Background & Objectives */}
               <div className="pt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#166be0] mb-2 font-semibold">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#39FF14] mb-2 font-semibold">
                     {lang === 'id' ? 'Latar Belakang & Kebutuhan' : 'Background & Context'}
                   </h4>
-                  <p className="text-[#A8ADA3] leading-relaxed">
+                  <p className="text-[#A5ADA3] leading-relaxed">
                     {caseStudy.background[lang]}
                   </p>
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#166be0] mb-2 font-semibold">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#39FF14] mb-2 font-semibold">
                     {lang === 'id' ? 'Tujuan Inisiatif' : 'Initiative Objectives'}
                   </h4>
-                  <ul className="space-y-2 text-[#A8ADA3]">
+                  <ul className="space-y-2 text-[#A5ADA3]">
                     {caseStudy.objectives[lang].map((obj, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#166be0] mt-1.5 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#39FF14] mt-1.5 shrink-0" />
                         <span>{obj}</span>
                       </li>
                     ))}
@@ -135,18 +135,18 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
               {/* Role & Activities */}
               <div className="pt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#166be0] mb-2 font-semibold">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#39FF14] mb-2 font-semibold">
                     {lang === 'id' ? 'Peran CoCreAct' : 'CoCreAct Contribution'}
                   </h4>
-                  <p className="text-[#A8ADA3] leading-relaxed">
+                  <p className="text-[#A5ADA3] leading-relaxed">
                     {caseStudy.roleDescription[lang]}
                   </p>
                   {caseStudy.partners && caseStudy.partners.length > 0 && (
-                    <div className="mt-4 pt-3 border-t border-[#F5F4EE]/10">
-                      <span className="text-xs text-[#A8ADA3] block font-mono mb-1">
+                    <div className="mt-4 pt-3 border-t border-[#F5F7F0]/10">
+                      <span className="text-xs text-[#A5ADA3] block font-mono mb-1">
                         {lang === 'id' ? 'Mitra Kolaborator Terlibat:' : 'Collaborating Partners:'}
                       </span>
-                      <p className="text-xs text-[#F5F4EE]/90">
+                      <p className="text-xs text-[#F5F7F0]/90">
                         {caseStudy.partners.join(' · ')}
                       </p>
                     </div>
@@ -154,10 +154,10 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#166be0] mb-2 font-semibold">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#39FF14] mb-2 font-semibold">
                     {lang === 'id' ? 'Rangkaian Kegiatan' : 'Key Activities'}
                   </h4>
-                  <ul className="space-y-2 text-[#A8ADA3]">
+                  <ul className="space-y-2 text-[#A5ADA3]">
                     {caseStudy.activities[lang].map((act, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#E9A15A] mt-1.5 shrink-0" />
@@ -171,13 +171,13 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
               {/* Outputs & Lessons Learned */}
               <div className="pt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#166be0] mb-2 font-semibold">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#39FF14] mb-2 font-semibold">
                     {lang === 'id' ? 'Keluaran Nyata' : 'Concrete Outputs'}
                   </h4>
-                  <ul className="space-y-1.5 text-[#A8ADA3]">
+                  <ul className="space-y-1.5 text-[#A5ADA3]">
                     {caseStudy.outputs[lang].map((output, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-[#166be0] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-[#39FF14] shrink-0 mt-0.5" />
                         <span>{output}</span>
                       </li>
                     ))}
@@ -185,10 +185,10 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#166be0] mb-2 font-semibold">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#39FF14] mb-2 font-semibold">
                     {lang === 'id' ? 'Refleksi & Pembelajaran' : 'Lessons Learned'}
                   </h4>
-                  <ul className="space-y-2 text-[#A8ADA3]">
+                  <ul className="space-y-2 text-[#A5ADA3]">
                     {caseStudy.lessonsLearned[lang].map((lesson, i) => (
                       <li key={i} className="italic text-xs sm:text-sm">
                         “{lesson}”
@@ -202,8 +202,8 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
 
           {/* Related Initiatives */}
           {relatedProjects.length > 0 && (
-            <div className="pt-8 border-t border-[#F5F4EE]/10">
-              <h4 className="text-xs font-mono uppercase tracking-wider text-[#A8ADA3] mb-4">
+            <div className="pt-8 border-t border-[#F5F7F0]/10">
+              <h4 className="text-xs font-mono uppercase tracking-wider text-[#A5ADA3] mb-4">
                 {lang === 'id' ? 'Inisiatif Terkait Lainnya' : 'Related Initiatives'}
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -211,15 +211,15 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                   <div
                     key={p.id}
                     onClick={() => onSelectProject(p)}
-                    className="p-4 bg-[#111310] border border-[#F5F4EE]/10 rounded-xl hover:border-[#166be0]/40 transition-colors cursor-pointer group flex items-center justify-between"
+                    className="p-4 bg-[#102B1B]/40 border border-[#F5F7F0]/10 rounded-xl hover:border-[#39FF14]/50 transition-colors cursor-pointer group flex items-center justify-between"
                   >
                     <div>
-                      <p className="text-xs text-[#166be0] font-mono">{p.category[lang]}</p>
-                      <h5 className="text-sm font-bold text-[#F5F4EE] group-hover:text-[#166be0] transition-colors line-clamp-1">
+                      <p className="text-xs text-[#39FF14] font-mono">{p.category[lang]}</p>
+                      <h5 className="text-sm font-bold text-[#F5F7F0] group-hover:text-[#39FF14] transition-colors line-clamp-1">
                         {p.title}
                       </h5>
                     </div>
-                    <span className="text-xs font-mono text-[#A8ADA3] group-hover:translate-x-1 transition-transform">
+                    <span className="text-xs font-mono text-[#A5ADA3] group-hover:text-[#39FF14] group-hover:translate-x-1 transition-all">
                       →
                     </span>
                   </div>

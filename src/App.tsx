@@ -56,7 +56,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#171916] text-[#F5F4EE] flex flex-col font-sans selection:bg-[#166be0] selection:text-white">
+    <div className="min-h-screen bg-[#111411] text-[#F5F7F0] flex flex-col font-sans selection:bg-[#39FF14] selection:text-[#111411]">
       {/* 04. Clean Cinematic Single-Lane Header */}
       <Header
         lang={lang}

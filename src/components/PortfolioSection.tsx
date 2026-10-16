@@ -38,26 +38,26 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ lang }) => {
   };
 
   return (
-    <section id="portfolio" className="py-24 md:py-36 bg-[#F5F4EE] text-[#171916]">
+    <section id="portfolio" className="py-24 md:py-36 bg-[#F5F7F0] text-[#111411]">
       <div className="editorial-container">
         {/* Section Eyebrow Label */}
-        <span className="section-label text-[#166be0]">
+        <span className="section-label text-[#102B1B] font-bold">
           {lang === 'id' ? PORTFOLIO_CONTENT.sectionLabel : PORTFOLIO_CONTENT.sectionLabelEn}
         </span>
 
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-[1.1] text-[#171916]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-[1.1] text-[#111411]">
             {PORTFOLIO_CONTENT.headline[lang]}
           </h2>
-          <p className="text-base sm:text-lg text-[#171916]/80 mt-4 leading-relaxed font-sans">
+          <p className="text-base sm:text-lg text-[#111411]/80 mt-4 leading-relaxed font-sans">
             {PORTFOLIO_CONTENT.supportingText[lang]}
           </p>
         </div>
 
         {/* Category Filter Segments */}
         <div className="mb-14 overflow-x-auto pb-2 scrollbar-none">
-          <div className="inline-flex items-center gap-1.5 p-1 bg-[#171916]/5 border border-[#171916]/10 rounded-full">
+          <div className="inline-flex items-center gap-1.5 p-1 bg-[#111411]/5 border border-[#111411]/10 rounded-full">
             {categories.map((cat) => {
               const isActive = selectedCategory === cat.key;
               return (
@@ -67,8 +67,8 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ lang }) => {
                   onClick={() => setSelectedCategory(cat.key)}
                   className={`px-4 py-1.5 text-xs font-medium rounded-full whitespace-nowrap transition-all cursor-pointer ${
                     isActive
-                      ? 'bg-[#166be0] text-white font-semibold shadow-sm'
-                      : 'text-[#171916]/70 hover:text-[#171916]'
+                      ? 'bg-[#111411] text-[#39FF14] font-bold shadow-sm'
+                      : 'text-[#111411]/70 hover:text-[#111411]'
                   }`}
                 >
                   {cat.label}
@@ -87,11 +87,11 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ lang }) => {
             return (
               <article
                 key={project.id}
-                className="group flex flex-col justify-between bg-white border border-[#171916]/10 rounded-2xl overflow-hidden hover:border-[#166be0]/50 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-xl"
+                className="group flex flex-col justify-between bg-white border border-[#111411]/10 rounded-2xl overflow-hidden hover:border-[#39FF14]/60 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-xl"
               >
                 {/* Visual Thumbnail */}
                 <div
-                  className={`relative w-full ${aspectClass} overflow-hidden bg-[#171916]/5 cursor-pointer`}
+                  className={`relative w-full ${aspectClass} overflow-hidden bg-[#111411]/5 cursor-pointer`}
                   onClick={() => setActiveProject(project)}
                 >
                   <ImageWithFallback
@@ -103,7 +103,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ lang }) => {
                   />
                   {project.role && (
                     <div className="absolute top-4 left-4 z-10">
-                      <span className="text-[11px] font-mono tracking-wider uppercase px-3 py-1 rounded-full bg-[#171916]/80 text-[#166be0] backdrop-blur-md border border-[#166be0]/30">
+                      <span className="text-[11px] font-mono tracking-wider uppercase px-3 py-1 rounded-full bg-[#111411]/90 text-[#39FF14] backdrop-blur-md border border-[#39FF14]/40 font-semibold">
                         {project.role[lang]}
                       </span>
                     </div>
@@ -113,33 +113,33 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ lang }) => {
                 {/* Project Metadata & Body */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
                   <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-xs font-mono text-[#777B74]">
-                      <span className="text-[#166be0] font-semibold">{project.category[lang]}</span>
+                    <div className="flex items-center gap-2 text-xs font-mono text-[#A5ADA3]">
+                      <span className="text-[#102B1B] font-bold">{project.category[lang]}</span>
                       <span>·</span>
                       <span>{project.date[lang]}</span>
                     </div>
 
                     <h3
                       onClick={() => setActiveProject(project)}
-                      className="text-xl sm:text-2xl font-bold font-display text-[#171916] group-hover:text-[#166be0] transition-colors leading-snug cursor-pointer"
+                      className="text-xl sm:text-2xl font-bold font-display text-[#111411] group-hover:text-[#102B1B] transition-colors leading-snug cursor-pointer"
                     >
                       {project.title}
                     </h3>
 
-                    <p className="text-sm text-[#171916]/75 leading-relaxed font-sans">
+                    <p className="text-sm text-[#111411]/75 leading-relaxed font-sans">
                       {project.summary[lang]}
                     </p>
                   </div>
 
                   {/* Action Link to Case Study */}
-                  <div className="pt-4 border-t border-[#171916]/10 flex items-center justify-between">
-                    <span className="text-[11px] font-mono text-[#777B74]">
+                  <div className="pt-4 border-t border-[#111411]/10 flex items-center justify-between">
+                    <span className="text-[11px] font-mono text-[#A5ADA3]">
                       {lang === 'id' ? 'Dokumentasi Terverifikasi' : 'Verified Documentation'}
                     </span>
                     <button
                       type="button"
                       onClick={() => setActiveProject(project)}
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#166be0] hover:text-[#0B1D40] transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#102B1B] hover:text-[#102B1B] transition-colors cursor-pointer group-hover:translate-x-0.5"
                     >
                       <span>{PORTFOLIO_CONTENT.caseStudyButton[lang]}</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
@@ -152,11 +152,11 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ lang }) => {
         </div>
 
         {/* Simple Editorial CTA at Bottom of Portfolio */}
-        <div className="mt-20 pt-10 border-t border-[#171916]/12 flex justify-center">
+        <div className="mt-20 pt-10 border-t border-[#111411]/12 flex justify-center">
           <a
             href="#start"
             onClick={scrollToStart}
-            className="inline-flex items-center gap-2 text-base sm:text-lg font-display font-semibold text-[#166be0] hover:text-[#0B1D40] transition-colors group"
+            className="inline-flex items-center gap-2 text-base sm:text-lg font-display font-bold text-[#102B1B] hover:text-[#102B1B] transition-colors group"
           >
             <span>{PORTFOLIO_CONTENT.ctaText[lang]}</span>
           </a>

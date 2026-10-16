@@ -25,10 +25,10 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
   };
 
   return (
-    <footer className="bg-[#171916] text-[#F5F4EE] border-t border-[#F5F4EE]/10 pt-16 pb-12">
+    <footer className="bg-[#111411] text-[#F5F7F0] border-t border-[#F5F7F0]/10 pt-16 pb-12">
       <div className="editorial-container">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-[#F5F4EE]/10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-[#F5F7F0]/10">
           {/* Brand Column */}
           <div className="md:col-span-6 space-y-4">
             <a
@@ -46,27 +46,27 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
               <span>{BRAND_DICTIONARY.name}</span>
             </a>
 
-            <p className="text-sm font-display font-semibold text-[#166be0]">
+            <p className="text-sm font-display font-semibold text-[#39FF14]">
               “{FOOTER_CONTENT.tagline[lang]}”
             </p>
 
-            <p className="text-sm text-[#777B74] max-w-sm leading-relaxed">
+            <p className="text-sm text-[#A5ADA3] max-w-sm leading-relaxed">
               {FOOTER_CONTENT.brandDescription[lang]}
             </p>
           </div>
 
           {/* Quick Nav Links */}
           <div className="md:col-span-3 space-y-3">
-            <span className="text-xs font-mono tracking-widest text-[#166be0] uppercase block mb-3 font-semibold">
+            <span className="text-xs font-mono tracking-widest text-[#39FF14] uppercase block mb-3 font-semibold">
               {FOOTER_CONTENT.navTitle[lang]}
             </span>
-            <ul className="space-y-2 text-sm text-[#F5F4EE]/80">
+            <ul className="space-y-2 text-sm text-[#F5F7F0]/80">
               {HEADER_NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="hover:text-[#166be0] transition-colors"
+                    className="hover:text-[#39FF14] transition-colors"
                   >
                     {link.label[lang]}
                   </a>
@@ -77,14 +77,14 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
 
           {/* Connect / Social Channels */}
           <div className="md:col-span-3 space-y-3">
-            <span className="text-xs font-mono tracking-widest text-[#166be0] uppercase block mb-3 font-semibold">
+            <span className="text-xs font-mono tracking-widest text-[#39FF14] uppercase block mb-3 font-semibold">
               {FOOTER_CONTENT.socialTitle[lang]}
             </span>
-            <ul className="space-y-2 text-sm text-[#F5F4EE]/80">
+            <ul className="space-y-2 text-sm text-[#F5F7F0]/80">
               <li>
                 <a
                   href={`mailto:${siteConfig.inquiryEmail}`}
-                  className="hover:text-[#166be0] transition-colors"
+                  className="hover:text-[#39FF14] transition-colors"
                 >
                   {siteConfig.inquiryEmail}
                 </a>
@@ -94,7 +94,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                   href={siteConfig.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#166be0] transition-colors"
+                  className="hover:text-[#39FF14] transition-colors"
                 >
                   Instagram ↗
                 </a>
@@ -104,7 +104,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                   href={siteConfig.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#166be0] transition-colors"
+                  className="hover:text-[#39FF14] transition-colors"
                 >
                   LinkedIn ↗
                 </a>
@@ -114,7 +114,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                   href={siteConfig.contactUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#166be0] transition-colors"
+                  className="hover:text-[#39FF14] transition-colors"
                 >
                   WhatsApp ↗
                 </a>
@@ -124,7 +124,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
         </div>
 
         {/* Bottom Sub-footer */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#777B74]">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#A5ADA3]">
           <p>
             © {currentYear} {BRAND_DICTIONARY.name}. {BRAND_DICTIONARY.expansion}.
           </p>
@@ -134,7 +134,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
               href={FOOTER_CONTENT.videoAttributionUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#F5F4EE] transition-colors underline underline-offset-4"
+              className="hover:text-[#39FF14] transition-colors underline underline-offset-4"
             >
               {FOOTER_CONTENT.videoAttribution[lang]}
             </a>

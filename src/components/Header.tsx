@@ -176,13 +176,13 @@ export const Header: React.FC<HeaderProps> = ({
           aria-label="Mobile Navigation"
         >
           <div className="mobile-overlay-header">
-            <span className="text-xs font-mono tracking-widest text-[#166be0] uppercase">
+            <span className="text-xs font-mono tracking-widest text-[#39FF14] uppercase font-semibold">
               {lang === 'id' ? 'Navigasi' : 'Navigation'}
             </span>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="p-2 text-[#F5F4EE]/70 hover:text-[#F5F4EE] transition-colors"
+              className="p-2 text-[#F5F7F0]/70 hover:text-[#39FF14] transition-colors"
               aria-label="Close menu"
             >
               <X className="w-6 h-6" />
@@ -213,7 +213,7 @@ export const Header: React.FC<HeaderProps> = ({
               <i>↗</i>
             </a>
 
-            <p className="text-xs font-mono text-[#777B74] text-center mt-4">
+            <p className="text-xs font-mono text-[#A5ADA3] text-center mt-4">
               CoCreAct · {BRAND_DICTIONARY.tagline[lang]}
             </p>
           </div>
