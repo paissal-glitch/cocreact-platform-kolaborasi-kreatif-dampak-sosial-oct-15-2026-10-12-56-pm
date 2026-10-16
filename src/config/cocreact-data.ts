@@ -35,7 +35,10 @@ export type ProjectRole =
   | 'Penyelenggara'
   | 'Fasilitator'
   | 'Kolaborator'
-  | 'Mitra Pendukung';
+export interface ProjectGalleryItem {
+  src: string;
+  caption: { id: string; en: string };
+}
 
 export interface ProjectItem {
   id: string;
@@ -47,6 +50,7 @@ export interface ProjectItem {
   summary: { id: string; en: string };
   image: string;
   imageAlt: { id: string; en: string };
+  gallery?: ProjectGalleryItem[];
   caseStudy?: {
     background: { id: string; en: string };
     objectives: { id: string[]; en: string[] };
@@ -283,9 +287,46 @@ export const VERIFIED_PROJECTS: ProjectItem[] = [
     },
     image: MEDIA.programs.cocreactVol1.src,
     imageAlt: {
-      id: 'Pameran zine dan karya fotografi komunitas dalam CoCreAct Vol. 1',
-      en: 'Community zine and photography exhibition in CoCreAct Vol. 1',
+      id: 'Dokumentasi sesi temu wicara dan kolaborasi kreatif CoCreAct Vol. 1',
+      en: 'Documentation of keynote discussion and creative collaboration at CoCreAct Vol. 1',
     },
+    gallery: [
+      {
+        src: '/media/programs/cocreact_vol1_panel.jpg',
+        caption: {
+          id: 'Sesi temu wicara pembuka inisiatif kolaborasi CoCreAct Vol. 1',
+          en: 'Keynote gathering and initiative dialogue at CoCreAct Vol. 1',
+        },
+      },
+      {
+        src: '/media/programs/cocreact_vol1_speaker.jpg',
+        caption: {
+          id: 'Sesi paparan "Whats in Teman Istimewa" bersama pembicara',
+          en: '"Whats in Teman Istimewa" sharing session with guest speaker',
+        },
+      },
+      {
+        src: '/media/programs/cocreact_vol1_camera.jpg',
+        caption: {
+          id: 'Dokumentasi visual dan aktivitas kreatif fotografer komunitas',
+          en: 'Visual documentation and community photographers at work',
+        },
+      },
+      {
+        src: '/media/programs/cocreact_vol1_audience.jpg',
+        caption: {
+          id: 'Antusiasme peserta dalam sesi diskusi dan bertukar gagasan',
+          en: 'Engaged audience during open dialogue and idea exchange',
+        },
+      },
+      {
+        src: '/media/programs/cocreact_vol1_discussion.jpg',
+        caption: {
+          id: 'Ruang interaksi inklusif dan pembentukan jejaring kolaborator baru',
+          en: 'Inclusive interaction space and expanding collaborator network',
+        },
+      },
+    ],
     caseStudy: {
       background: {
         id: 'Kebutuhan akan ruang terbuka yang menyatukan pegiat seni visual independen, fotografer, pembuat film muda, dan pembuat zine di ruang fisik yang egaliter.',

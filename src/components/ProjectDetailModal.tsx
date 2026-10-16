@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { X, CheckCircle2 } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { X, CheckCircle2, Images } from 'lucide-react';
 import { ProjectItem, Language } from '../config/cocreact-data';
 import { ImageWithFallback } from './ImageWithFallback';
 
@@ -18,6 +18,12 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   onSelectProject,
   allProjects,
 }) => {
+  const [activeImage, setActiveImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    setActiveImage(project?.image || null);
+  }, [project]);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -70,12 +76,12 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
         {/* Modal Main Banner */}
         <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] overflow-hidden bg-[#111411]">
           <ImageWithFallback
-            src={project.image}
+            src={activeImage || project.image}
             alt={project.imageAlt[lang]}
             fallbackTitle={project.title}
             aspectRatioClass="aspect-[16/9] sm:aspect-[21/9]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#111411] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#111411] via-transparent to-transparent pointer-events-none" />
         </div>
 
         {/* Modal Content Details */}
@@ -197,6 +203,63 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                   </ul>
                 </div>
               </div>
+            </div>
+          )}
+
+          {/* Documentation Photo Gallery */}
+          {project.gallery && project.gallery.length > 0 && (
+            <div className="pt-8 border-t border-[#F5F7F0]/10 space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Images className="w-4 h-4 text-[#39FF14]" />
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#39FF14] font-semibold">
+                    {lang === 'id' ? 'Galeri Dokumentasi Foto' : 'Photo Documentation Gallery'}
+                  </h4>
+                </div>
+                <span className="text-xs font-mono text-[#A5ADA3]">
+                  {project.gallery.length} {lang === 'id' ? 'Foto Tersedia' : 'Photos'}
+                </span>
+              </div>
+
+              {/* Gallery Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                {project.gallery.map((item, idx) => {
+                  const isSelected = (activeImage || project.image) === item.src;
+                  return (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => setActiveImage(item.src)}
+                      className={`group relative aspect-[4/3] rounded-lg overflow-hidden border transition-all text-left cursor-pointer ${
+                        isSelected
+                          ? 'border-[#39FF14] ring-2 ring-[#39FF14]/50 scale-[1.03] shadow-lg'
+                          : 'border-[#F5F7F0]/15 hover:border-[#39FF14]/60 opacity-80 hover:opacity-100'
+                      }`}
+                      title={item.caption?.[lang]}
+                    >
+                      <img
+                        src={item.src}
+                        alt={item.caption?.[lang] || `Foto dokumentasi ${idx + 1}`}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Active Photo Caption */}
+              {project.gallery.find((g) => g.src === (activeImage || project.image))?.caption && (
+                <div className="p-3 rounded-lg bg-[#102B1B]/40 border border-[#39FF14]/20 flex items-center justify-between text-xs">
+                  <span className="text-[#F5F7F0]/90 font-sans">
+                    {project.gallery.find((g) => g.src === (activeImage || project.image))?.caption[lang]}
+                  </span>
+                  <span className="text-[11px] font-mono text-[#39FF14] shrink-0 ml-3">
+                    {lang === 'id' ? 'Klik foto untuk pratinjau utama' : 'Click photo to view in banner'}
+                  </span>
+                </div>
+              )}
             </div>
           )}
 

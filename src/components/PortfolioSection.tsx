@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Camera } from 'lucide-react';
 import {
   PORTFOLIO_CONTENT,
   VERIFIED_PROJECTS,
@@ -99,6 +99,14 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ lang }) => {
                     <div className="absolute top-4 left-4 z-10">
                       <span className="text-[11px] font-mono tracking-wider uppercase px-3 py-1 rounded-full bg-[#111411]/90 text-[#39FF14] backdrop-blur-md border border-[#39FF14]/40 font-semibold">
                         {project.role[lang]}
+                      </span>
+                    </div>
+                  )}
+                  {project.gallery && project.gallery.length > 0 && (
+                    <div className="absolute bottom-3 right-3 z-10">
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-mono px-2.5 py-1 rounded-full bg-[#111411]/90 text-white backdrop-blur-md border border-white/20 font-medium">
+                        <Camera className="w-3.5 h-3.5 text-[#39FF14]" />
+                        <span>{project.gallery.length} Foto</span>
                       </span>
                     </div>
                   )}
