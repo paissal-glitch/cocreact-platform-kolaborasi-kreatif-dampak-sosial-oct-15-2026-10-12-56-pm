@@ -4,6 +4,7 @@ import {
   BRAND_DICTIONARY,
   HEADER_NAV_LINKS,
   Language,
+  MEDIA,
   siteConfig,
 } from '../config/cocreact-data';
 
@@ -88,7 +89,7 @@ export const Header: React.FC<HeaderProps> = ({
     <>
       <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
         <div className="header-inner">
-          {/* Left: CoCreAct Wordmark (28–32px, bold, minimal) */}
+          {/* Left: Official CoCreAct Logo */}
           <div className="header-brand">
             <a
               className="wordmark"
@@ -96,14 +97,15 @@ export const Header: React.FC<HeaderProps> = ({
               aria-label="CoCreAct Home"
               onClick={(e) => handleNavClick(e, '#top')}
             >
-              <svg viewBox="0 0 32 32" className="wordmark-sprout" aria-hidden="true" fill="none">
-                <path
-                  d="M16 28c0-8 0-12-5-18M16 28c0-6 2-10 7-14M16 20c-2-2-5-3-8-3"
-                  strokeWidth="2.6"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <span>{BRAND_DICTIONARY.name}</span>
+              <img
+                src={MEDIA.brand.logo}
+                alt="CoCreAct"
+                className="h-7 md:h-8 w-auto object-contain transition-opacity hover:opacity-90"
+                width={140}
+                height={32}
+                loading="eager"
+                decoding="async"
+              />
             </a>
           </div>
 

@@ -145,13 +145,13 @@ export const HERO_CONTENT = {
   },
   image: MEDIA.hero.poster,
   imageAlt: {
-    id: 'Dokumentasi perancangan inisiatif kolaboratif CoCreAct',
-    en: 'CoCreAct collaborative initiative design documentation',
+    id: 'Dokumentasi kegiatan kolaborasi dan edukasi inklusif bersama mitra CoCreAct',
+    en: 'Documentation of collaborative and inclusive educational programs with CoCreAct partners',
   },
   fallbackImage: MEDIA.hero.poster,
   fallbackImageAlt: {
-    id: 'Dokumentasi perancangan inisiatif kolaboratif CoCreAct',
-    en: 'CoCreAct collaborative initiative design documentation',
+    id: 'Dokumentasi kegiatan kolaborasi dan edukasi inklusif bersama mitra CoCreAct',
+    en: 'Documentation of collaborative and inclusive educational programs with CoCreAct partners',
   },
 };
 
@@ -637,10 +637,10 @@ export const VERIFIED_PROJECTS: ProjectItem[] = [
       id: 'Penguatan kapasitas guru SLB dalam pendidikan HIV/AIDS dan kesehatan reproduksi inklusif, sebagai kelanjutan dari program PESONA.',
       en: 'Capacity-strengthening workshop for special needs (SLB) teachers in inclusive HIV/AIDS and reproductive health education.',
     },
-    image: MEDIA.programs.inclusivePesona.src,
+    image: MEDIA.programs.pesonaEducator.src,
     imageAlt: {
-      id: 'Sesi peningkatan kapasitas guru SLB dalam pengajaran kesehatan reproduksi adaptif',
-      en: 'Capacity-building session for SLB teachers on adaptive health pedagogy',
+      id: 'Dokumentasi Kelas Edukasi #03 Pesona Edukator: Upskilling Tenaga Pendidik SLB',
+      en: 'Documentation of Class Education #03 Pesona Educator: SLB Teachers Upskilling',
     },
     caseStudy: {
       background: {

@@ -21,6 +21,8 @@ export interface MediaAsset {
 
 export const MEDIA = {
   brand: {
+    logo: '/media/brand/cocreact-logo.png',
+    logoPng: '/media/brand/cocreact-logo.png',
     logoSvg: '/media/brand/cocreact-logo.svg',
     sproutSvg: '/media/brand/brand-sprout.svg',
     favicon: '/favicon.svg',
@@ -68,6 +70,14 @@ export const MEDIA = {
       alt: {
         id: 'Pelatihan Inklusif Pesona Pendidik',
         en: 'Inclusive Educator Training',
+      },
+    },
+    pesonaEducator: {
+      src: '/media/programs/portfolio_pesona_educator.jpg',
+      legacySrc: '/assets/images/portfolio_pesona_educator.jpg',
+      alt: {
+        id: 'Dokumentasi Kelas Edukasi #03 Pesona Edukator Upskilling Tenaga Pendidik SLB',
+        en: 'Class Education #03 Pesona Educator - Special Needs Teachers Upskilling',
       },
     },
   },

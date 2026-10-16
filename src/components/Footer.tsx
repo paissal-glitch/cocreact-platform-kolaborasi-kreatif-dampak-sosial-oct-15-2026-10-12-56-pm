@@ -4,6 +4,7 @@ import {
   HEADER_NAV_LINKS,
   FOOTER_CONTENT,
   Language,
+  MEDIA,
   siteConfig,
 } from '../config/cocreact-data';
 
@@ -34,16 +35,18 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
             <a
               href="#top"
               onClick={(e) => handleNavClick(e, '#top')}
-              className="wordmark inline-flex items-center gap-2.5"
+              className="wordmark inline-flex items-center"
+              aria-label="CoCreAct Home"
             >
-              <svg viewBox="0 0 32 32" className="wordmark-sprout" aria-hidden="true" fill="none">
-                <path
-                  d="M16 28c0-8 0-12-5-18M16 28c0-6 2-10 7-14M16 20c-2-2-5-3-8-3"
-                  strokeWidth="2.6"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <span>{BRAND_DICTIONARY.name}</span>
+              <img
+                src={MEDIA.brand.logo}
+                alt="CoCreAct"
+                className="h-8 md:h-9 w-auto object-contain transition-opacity hover:opacity-90"
+                width={155}
+                height={36}
+                loading="lazy"
+                decoding="async"
+              />
             </a>
 
             <p className="text-sm font-display font-semibold text-[#39FF14]">
