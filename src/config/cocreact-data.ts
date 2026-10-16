@@ -143,6 +143,11 @@ export const HERO_CONTENT = {
     id: 'Gulir ke bawah',
     en: 'Scroll down',
   },
+  image: MEDIA.hero.poster,
+  imageAlt: {
+    id: 'Dokumentasi perancangan inisiatif kolaboratif CoCreAct',
+    en: 'CoCreAct collaborative initiative design documentation',
+  },
   fallbackImage: MEDIA.hero.poster,
   fallbackImageAlt: {
     id: 'Dokumentasi perancangan inisiatif kolaboratif CoCreAct',

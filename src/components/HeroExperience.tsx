@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
-import { HERO_CONTENT, Language, siteConfig } from '../config/cocreact-data';
+import { HERO_CONTENT, Language, MEDIA } from '../config/cocreact-data';
 
 interface HeroExperienceProps {
   lang: Language;
 }
 
 export const HeroExperience: React.FC<HeroExperienceProps> = ({ lang }) => {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const [videoError, setVideoError] = useState(false);
 
   // Typing animation phrases based on selected language
   const phrases = HERO_CONTENT.typingPhrases?.[lang] || [
@@ -82,9 +80,8 @@ export const HeroExperience: React.FC<HeroExperienceProps> = ({ lang }) => {
     return () => clearTimeout(timeoutId);
   }, [displayedText, isDeleting, phraseIndex, phrases, prefersReducedMotion]);
 
-  // YouTube embed URL with autoplay, loop, muted, no controls
-  const videoId = siteConfig.heroVideoId || 'q0VzUigrb_g';
-  const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=${videoId}&playsinline=1&modestbranding=1&enablejsapi=1`;
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imgSrc, setImgSrc] = useState(HERO_CONTENT.image || HERO_CONTENT.fallbackImage);
 
   const scrollToPortfolio = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -100,33 +97,28 @@ export const HeroExperience: React.FC<HeroExperienceProps> = ({ lang }) => {
 
   const currentActivePhrase = phrases[phraseIndex % phrases.length] || '';
   const staticHeadlineText = HERO_CONTENT.staticHeadline?.[lang] || HERO_CONTENT.headlineLead[lang];
+  const imageAltText = HERO_CONTENT.imageAlt?.[lang] || HERO_CONTENT.fallbackImageAlt[lang];
 
   return (
     <section className="hero-container" aria-label="Hero Section">
-      {/* Background Video Layer with Robust Image Fallback */}
-      <div className="hero-video-wrapper">
-        {/* High-res documentary fallback image, always rendered beneath */}
+      {/* High-Resolution Documentary Background Image Layer */}
+      <div className="hero-image-wrapper hero-video-wrapper">
         <img
-          src={HERO_CONTENT.fallbackImage}
-          alt={HERO_CONTENT.fallbackImageAlt[lang]}
-          className={`hero-fallback-image ${videoLoaded && !videoError ? 'opacity-30' : 'opacity-100'}`}
+          src={imgSrc}
+          alt={imageAltText}
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+          onLoad={() => setImageLoaded(true)}
+          onError={() => {
+            if (imgSrc !== MEDIA.hero.legacyFallback) {
+              setImgSrc(MEDIA.hero.legacyFallback);
+            }
+          }}
+          className={`hero-image hero-fallback-image transition-opacity duration-700 ${
+            imageLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
         />
-
-        {/* Cinematic YouTube Player Overlay */}
-        {!videoError && (
-          <iframe
-            className={`hero-video-frame transition-opacity duration-1000 ${
-              videoLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
-            src={embedUrl}
-            title="CoCreAct Cinematic Background"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            onLoad={() => setVideoLoaded(true)}
-            onError={() => setVideoError(true)}
-            tabIndex={-1}
-            aria-hidden="true"
-          />
-        )}
 
         {/* Layered Contrast Scrim Gradients for WCAG AA/AAA Contrast */}
         <div className="hero-overlay-scrim" />
