@@ -8,6 +8,7 @@ import {
 } from '../config/cocreact-data';
 import { ImageWithFallback } from './ImageWithFallback';
 import { ProjectDetailModal } from './ProjectDetailModal';
+import { SectionHeader } from './ui';
 
 interface PortfolioSectionProps {
   lang: Language;
@@ -40,20 +41,13 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ lang }) => {
   return (
     <section id="portfolio" className="py-24 md:py-36 bg-[#F5F7F0] text-[#111411]">
       <div className="editorial-container">
-        {/* Section Eyebrow Label */}
-        <span className="section-label text-[#102B1B] font-bold">
-          {lang === 'id' ? PORTFOLIO_CONTENT.sectionLabel : PORTFOLIO_CONTENT.sectionLabelEn}
-        </span>
-
         {/* Section Header */}
-        <div className="max-w-3xl mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-[1.1] text-[#111411]">
-            {PORTFOLIO_CONTENT.headline[lang]}
-          </h2>
-          <p className="text-base sm:text-lg text-[#111411]/80 mt-4 leading-relaxed font-sans">
-            {PORTFOLIO_CONTENT.supportingText[lang]}
-          </p>
-        </div>
+        <SectionHeader
+          label={lang === 'id' ? PORTFOLIO_CONTENT.sectionLabel : PORTFOLIO_CONTENT.sectionLabelEn}
+          headline={PORTFOLIO_CONTENT.headline[lang]}
+          supportingText={PORTFOLIO_CONTENT.supportingText[lang]}
+          theme="light"
+        />
 
         {/* Category Filter Segments */}
         <div className="mb-14 overflow-x-auto pb-2 scrollbar-none">

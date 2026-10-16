@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { PILLARS_CONTENT, Language } from '../config/cocreact-data';
+import { SectionHeader } from './ui';
 
 interface PillarsSectionProps {
   lang: Language;
@@ -16,15 +17,12 @@ export const PillarsSection: React.FC<PillarsSectionProps> = ({ lang }) => {
   return (
     <section id="services" className="py-24 md:py-36 bg-[#FFFFFF] text-[#111411]">
       <div className="editorial-container">
-        {/* Section Eyebrow Label */}
-        <span className="section-label text-[#102B1B] font-bold">
-          {lang === 'id' ? PILLARS_CONTENT.sectionLabel : PILLARS_CONTENT.sectionLabelEn}
-        </span>
-
-        {/* Section Headline */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-[1.1] text-[#111411] max-w-3xl mb-16">
-          {PILLARS_CONTENT.headline[lang]}
-        </h2>
+        {/* Section Header */}
+        <SectionHeader
+          label={lang === 'id' ? PILLARS_CONTENT.sectionLabel : PILLARS_CONTENT.sectionLabelEn}
+          headline={PILLARS_CONTENT.headline[lang]}
+          theme="light"
+        />
 
         {/* Editorial 3 Pillars Grid with Large Numbers */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 pt-8 border-t border-[#111411]/12">

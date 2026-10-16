@@ -1,5 +1,6 @@
 import React from 'react';
 import { ABOUT_CONTENT, Language } from '../config/cocreact-data';
+import { Badge } from './ui';
 
 interface AboutSectionProps {
   lang: Language;
@@ -42,9 +43,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-[#111411]/12">
               {ABOUT_CONTENT.corePrinciples.map((item, idx) => (
                 <div key={idx} className="space-y-2">
-                  <span className="text-xs font-mono text-[#111411] bg-[#39FF14] px-2 py-0.5 rounded text-[11px] font-bold inline-block">
+                  <Badge variant="electric" className="text-[11px] font-bold">
                     0{idx + 1}
-                  </span>
+                  </Badge>
                   <h3 className="font-display font-bold text-lg text-[#111411]">
                     {item.label[lang]}
                   </h3>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { PROCESS_CONTENT, Language } from '../config/cocreact-data';
+import { SectionHeader } from './ui';
 
 interface ProcessSectionProps {
   lang: Language;
@@ -9,17 +10,12 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ lang }) => {
   return (
     <section id="process" className="py-24 md:py-36 bg-[#F5F7F0] text-[#111411]">
       <div className="editorial-container">
-        {/* Section Eyebrow Label */}
-        <span className="section-label text-[#102B1B] font-bold">
-          {lang === 'id' ? PROCESS_CONTENT.sectionLabel : PROCESS_CONTENT.sectionLabelEn}
-        </span>
-
-        {/* Section Headline */}
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-[1.1] text-[#111411]">
-            {PROCESS_CONTENT.headline[lang]}
-          </h2>
-        </div>
+        {/* Section Header */}
+        <SectionHeader
+          label={lang === 'id' ? PROCESS_CONTENT.sectionLabel : PROCESS_CONTENT.sectionLabelEn}
+          headline={PROCESS_CONTENT.headline[lang]}
+          theme="light"
+        />
 
         {/* 4 Stages Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 pt-8 border-t border-[#111411]/12">
