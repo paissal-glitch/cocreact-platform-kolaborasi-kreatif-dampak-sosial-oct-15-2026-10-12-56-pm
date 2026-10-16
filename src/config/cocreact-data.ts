@@ -95,13 +95,33 @@ export const HEADER_NAV_LINKS = [
 
 export const HERO_CONTENT = {
   eyebrow: 'COLLABORATION · CREATIVE · ACTION',
+  staticHeadline: {
+    id: 'Banyak kemungkinan.',
+    en: 'Endless possibilities.',
+  },
+  typingPhrases: {
+    id: [
+      'mulai dari ide.',
+      'mencoba hal baru.',
+      'belajar bersama.',
+      'menciptakan sesuatu.',
+      'bergerak bersama.',
+    ],
+    en: [
+      'starting from an idea.',
+      'trying new things.',
+      'learning together.',
+      'creating something.',
+      'moving forward together.',
+    ],
+  },
   headlineLead: {
-    id: 'Bukan sekadar bertemu.',
-    en: 'More than meeting.',
+    id: 'Banyak kemungkinan.',
+    en: 'Endless possibilities.',
   },
   headlineAccent: {
-    id: 'Kita menciptakan sesuatu bersama.',
-    en: 'We create something together.',
+    id: 'mulai dari ide.',
+    en: 'starting from an idea.',
   },
   supportingText: {
     id: 'CoCreAct mempertemukan gagasan, kreativitas, dan berbagai potensi untuk mengembangkan program yang relevan dan bermakna bagi masyarakat.',
