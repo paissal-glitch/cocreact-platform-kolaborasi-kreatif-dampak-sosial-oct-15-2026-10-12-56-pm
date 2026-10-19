@@ -7,7 +7,7 @@ interface ImpactSectionProps {
 
 export const ImpactSection: React.FC<ImpactSectionProps> = ({ lang }) => {
   return (
-    <section id="numbers" className="py-24 md:py-36 bg-[#FFFFFF] text-[#111411]">
+    <section id="impact" className="py-24 md:py-36 bg-[#FFFFFF] text-[#111411]">
       <div className="editorial-container">
         {/* Section Eyebrow Label */}
         <span className="section-label text-[#102B1B] font-bold">

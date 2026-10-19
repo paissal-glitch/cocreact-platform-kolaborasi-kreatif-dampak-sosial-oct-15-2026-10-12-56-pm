@@ -132,15 +132,8 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
             © {currentYear} {BRAND_DICTIONARY.name}. {BRAND_DICTIONARY.expansion}.
           </p>
 
-          <p className="text-center sm:text-right">
-            <a
-              href={FOOTER_CONTENT.videoAttributionUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#39FF14] transition-colors underline underline-offset-4"
-            >
-              {FOOTER_CONTENT.videoAttribution[lang]}
-            </a>
+          <p className="text-center sm:text-right font-sans">
+            {FOOTER_CONTENT.mediaAttribution[lang]}
           </p>
         </div>
       </div>

@@ -15,7 +15,7 @@ export const PillarsSection: React.FC<PillarsSectionProps> = ({ lang }) => {
   };
 
   return (
-    <section id="services" className="py-24 md:py-36 bg-[#FFFFFF] text-[#111411]">
+    <section id="pillars" className="py-24 md:py-36 bg-[#FFFFFF] text-[#111411]">
       <div className="editorial-container">
         {/* Section Header */}
         <SectionHeader
@@ -33,7 +33,7 @@ export const PillarsSection: React.FC<PillarsSectionProps> = ({ lang }) => {
             >
               <div className="space-y-6">
                 {/* Large Distinct Number */}
-                <span className="font-display text-4xl sm:text-5xl font-bold text-[#102B1B]/30 group-hover:text-[#102B1B] transition-colors">
+                <span className="font-display text-4xl sm:text-5xl font-bold text-[#102B1B]/40 group-hover:text-[#102B1B] transition-colors">
                   {pillar.number}
                 </span>
 

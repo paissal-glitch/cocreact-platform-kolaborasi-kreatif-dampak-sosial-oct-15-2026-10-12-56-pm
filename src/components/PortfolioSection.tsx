@@ -115,7 +115,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ lang }) => {
                 {/* Project Metadata & Body */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
                   <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-xs font-mono text-[#A5ADA3]">
+                    <div className="flex items-center gap-2 text-xs font-mono text-[#5A6558]">
                       <span className="text-[#102B1B] font-bold">{project.category[lang]}</span>
                       <span>·</span>
                       <span>{project.date[lang]}</span>
@@ -128,20 +128,20 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ lang }) => {
                       {project.title}
                     </h3>
 
-                    <p className="text-sm text-[#111411]/75 leading-relaxed font-sans">
+                    <p className="text-sm text-[#111411]/85 leading-relaxed font-sans">
                       {project.summary[lang]}
                     </p>
                   </div>
 
                   {/* Action Link to Case Study */}
                   <div className="pt-4 border-t border-[#111411]/10 flex items-center justify-between">
-                    <span className="text-[11px] font-mono text-[#A5ADA3]">
+                    <span className="text-[11px] font-mono text-[#5A6558]">
                       {lang === 'id' ? 'Dokumentasi Terverifikasi' : 'Verified Documentation'}
                     </span>
                     <button
                       type="button"
                       onClick={() => setActiveProject(project)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#102B1B] hover:text-[#102B1B] transition-colors cursor-pointer group-hover:translate-x-0.5"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#102B1B] hover:text-[#102B1B] transition-colors cursor-pointer group-hover:translate-x-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#102B1B] rounded"
                     >
                       <span>{PORTFOLIO_CONTENT.caseStudyButton[lang]}</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />

@@ -76,22 +76,21 @@ h1, h2, h3, h4, .font-display {
   letter-spacing: -0.025em;
 }
 
-/* Fixed section scroll offset for anchor navigation */
+/* Section scroll offset for anchor navigation */
 section,
 #top,
 #about,
+#pillars,
 #services,
 #portfolio,
 #process,
+#impact,
 #numbers,
 #start {
   scroll-margin-top: 90px;
 }
 
-/* ==========================================================================
-   HEADER — CLEAN CINEMATIC NAVIGATION
-   ========================================================================== */
-
+/* Site header and navigation */
 .site-header {
   position: fixed;
   top: 0;
@@ -262,17 +261,25 @@ section,
   transform: translate(2px, -2px);
 }
 
-.cta-outlined:hover i {
-  transform: translate(2px, -2px);
+.wordmark:focus-visible,
+.nav-link:focus-visible,
+.cta-outlined:focus-visible,
+.lang-btn:focus-visible,
+.hamburger-btn:focus-visible {
+  outline: 2px solid var(--color-electric-green);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
-/* Mobile Hamburger Trigger */
+/* Mobile Hamburger Trigger - 44px minimum tap target */
 .hamburger-btn {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 8px;
   border: 1px solid rgba(245, 247, 240, 0.2);
   background: transparent;

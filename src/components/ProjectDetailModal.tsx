@@ -66,7 +66,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-[#A5ADA3] hover:text-[#39FF14] hover:bg-[#102B1B] transition-colors cursor-pointer"
+            className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-[#A5ADA3] hover:text-[#39FF14] hover:bg-[#102B1B] focus-visible:outline-2 focus-visible:outline-[#39FF14] transition-colors cursor-pointer"
             aria-label={lang === 'id' ? 'Tutup detail proyek' : 'Close project details'}
           >
             <X className="w-5 h-5" />

@@ -184,7 +184,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="p-2 text-[#F5F7F0]/70 hover:text-[#39FF14] transition-colors"
+              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-[#F5F7F0]/80 hover:text-[#39FF14] focus-visible:outline-2 focus-visible:outline-[#39FF14] transition-colors"
               aria-label="Close menu"
             >
               <X className="w-6 h-6" />

@@ -95,10 +95,10 @@ export const BRAND_DICTIONARY = {
 
 export const HEADER_NAV_LINKS = [
   { label: { id: 'Tentang', en: 'About' }, href: '#about' },
-  { label: { id: 'Pilar', en: 'Pillars' }, href: '#services' },
+  { label: { id: 'Pilar', en: 'Pillars' }, href: '#pillars' },
   { label: { id: 'Portofolio', en: 'Portfolio' }, href: '#portfolio' },
   { label: { id: 'Proses', en: 'Process' }, href: '#process' },
-  { label: { id: 'Dampak', en: 'Impact' }, href: '#numbers' },
+  { label: { id: 'Dampak', en: 'Impact' }, href: '#impact' },
 ];
 
 export const HERO_CONTENT = {
@@ -943,9 +943,8 @@ export const FOOTER_CONTENT = {
     id: 'Kanal Kolaborasi',
     en: 'Connect',
   },
-  videoAttribution: {
-    id: 'Video latar panggung berlisensi Creative Commons (CC BY) — “Wanna Work Together?”.',
-    en: 'Hero background video licensed under Creative Commons (CC BY) — “Wanna Work Together?”.',
+  mediaAttribution: {
+    id: 'Dokumentasi inisiatif dan program kolaborasi komunitas CoCreAct.',
+    en: 'Documentation of CoCreAct community initiatives and collaborative programs.',
   },
-  videoAttributionUrl: 'https://creativecommons.org/about/videos/wanna-work-together/',
 };
